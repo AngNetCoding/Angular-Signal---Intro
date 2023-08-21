@@ -1,0 +1,24 @@
+<h1>Calculate Speed using Signal</h1>
+<br />
+<div>Distance</div>
+<!-- //We read signal value as in below synatx mentioned in ngModel e.g distance()// -->
+<select
+  [ngModel]="selectedDistance()"
+  (change)="onDistanceChanged($any($event.target).value)"
+>
+  <option *ngFor="let distance of distanceSlots()">{{ distance }}</option>
+</select>
+<br />
+<br />
+<div>Time</div>
+<select
+  [ngModel]="selectedTimeSlot()"
+  (change)="ontimeChanged($any($event.target).value)"
+>
+  <option *ngFor="let timeSlot of timeSlots()">{{ timeSlot }}</option>
+</select>
+<br />
+<br />
+<br />
+<div>Speed</div>
+<input type="text" [ngModel]="speed()" readonly />
