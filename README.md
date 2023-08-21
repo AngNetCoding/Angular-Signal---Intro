@@ -25,6 +25,8 @@ const count: WritableSignal<number> = signal(0);
 const doubleCount: Signal<number> = computed(() => count() \* 2);
 The doubleCount signal depends on count. Whenever count updates, Angular knows that anything which depends on either count or doubleCount needs to update as well.
 
+Computed signals are readonly.
+
 Effects
 Signals are useful because they can notify interested consumers when they change. An effect is an operation that runs whenever one or more signal values change. You can create an effect with the effect function:
 
